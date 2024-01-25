@@ -29,43 +29,44 @@
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
     
-    geometry = "500x5-10-50"
+    geometry = "0x0-30+20"
     #          [{width}]x{height}[+/-{x}+/-{y}]
+    #          define width and height by content, located top right.
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = yes
+    shrink = no
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 20
+    transparency = 10 
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
     # to the font height and padding.
-    notification_height = 50
+    notification_height = 0
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 14
+    separator_height = 1 
 
     # Padding between text and separator.
-    padding = 40
+    padding = 8 
 
     # Horizontal padding.
-    horizontal_padding = 20
+    horizontal_padding = 8 
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 10
+    frame_width = 3 
 
     # Defines color of the frame around the notification window.
-    frame_color = "#FFE000"
+    frame_color = "#aaaaaa"
 
     # Define a color for the separator.
     # possible values are:
@@ -73,7 +74,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = "#FF00FF"
+    separator_color = auto 
 
     # Sort messages by urgency.
     sort = yes
@@ -86,11 +87,11 @@
 
     ### Text ###
 
-    font = Monospace 14
+    font = JetBrainsMono Nerd Font 8
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 2
+    line_height = 0
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -126,11 +127,11 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b\n\n%a\n%i"
+    format = "<b>%s</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -160,7 +161,7 @@
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
@@ -246,26 +247,27 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
-    timeout = 10
+    background = "#2b2b2b"
+    foreground = "#ffffff"
+    timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = /home/popo/.config/dunst/icons/normal.png
 
 [urgency_normal]
-    background = "#285577"
+    background = "#2b2b2b"
     foreground = "#ffffff"
-    timeout = 10
+    timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = /home/popo/.config/dunst/icons/normal.png
 
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"
     frame_color = "#ff0000"
-    timeout = 0
+    timeout = 5
     # Icon for notifications with critical urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = /home/popo/.config/dunst/icons/critical.png
+  
 [play_sound]
     summary = "*"
     script = /home/popo/.config/dunst/alert/alert.sh
